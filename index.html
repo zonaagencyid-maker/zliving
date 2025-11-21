@@ -937,9 +937,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(res => {
         if (!res.ok) throw new Error('Failed to submit');
-      try { 
-        fbq('track', 'Lead', {content_name: 'Form Booking Survey'}); 
-          } catch(e){}
+        try { fbq('track', 'Lead'); } catch(e){}
         formMessage.innerText = "Terima kasih, data Anda sudah terkirim!";
         this.reset();
       })
