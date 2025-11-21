@@ -76,7 +76,16 @@ header a.btn:hover { transform: scale(1.05); }
     border-radius: 2px;
 }
 
-footer { background: #333; color: white; padding: 30px 0; text-align:center; }
+footer {
+  width: 100%;
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+  display: block;
+}
+footer p {
+  margin: 5px 0;
+}
 iframe { border-radius: 10px; }
 .icon-distance, .icon-feature { width:30px; margin-right:8px; vertical-align:middle; }
 
@@ -310,6 +319,63 @@ html { scroll-behavior: smooth; }
   margin: auto;
   display: block;
   border-radius: 10px;
+}
+
+/* ===== Form Container ===== */
+#leadForm {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Input Fields ===== */
+#leadForm input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+#leadForm input:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+/* ===== Submit Button ===== */
+#leadForm button {
+  padding: 12px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#leadForm button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+#leadForm button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* ===== Form Message ===== */
+#formMessage {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+  color: green;
 }
 </style>
 </head>
@@ -734,29 +800,40 @@ html { scroll-behavior: smooth; }
 </div>
 </section>
 
-<form id="leadForm">
-  <input type="text" name="nama" placeholder="Nama lengkap" required>
-  <input type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
-  <button type="submit">Kirim</button>
-</form>
-
-<!-- Tempat menampilkan pesan setelah submit -->
-<div id="formMessage" style="margin-top:10px;color:green;"></div>
 
 
-<!-- Footer -->
+<!-- Judul Form -->
+<section class="section" id="testimonial">
+  <div class="container">
+    <h2>Form Booking Survey</h2>
+
+    <!-- Form -->
+    <form id="leadForm">
+      <input type="text" name="nama" placeholder="Nama lengkap" required>
+      <input type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
+      <button type="submit">Kirim</button>
+    </form>
+
+    <!-- Pesan sukses/error -->
+    <div id="formMessage" style="margin-top:10px;color:green;text-align:center;"></div>
+  </div>
+</section>
+
+<!-- Footer → letakkan DI LUAR section! -->
 <footer>
-<div class="container text-center">
-<p>Marketing Z Living Garden Padalarang | WA: 08972590050 | Email: info@zlivinggarden.com</p>
-<p>Alamat lengkap: Jl. Raya Padalarang, Bandung Barat</p>
-</div>
+  <p style="text-align:center; margin:5px 0; color:white;">
+    Marketing Z Living Garden Padalarang | WA: 08972590050 | Email: info@zlivinggarden.com
+  </p>
+  <p style="text-align:center; margin:5px 0; color:white;">
+    Alamat lengkap: Jl. Raya Padalarang, Bandung Barat
+  </p>
 </footer>
 
+<!-- Floating WhatsApp -->
 <a href="https://wa.me/628972590050?text=Halo%20saya%20ingin%20booking%20survey"
    class="wa-float" target="_blank">
     <img src="whatsapp.png" alt="WhatsApp" class="wa-icon">
 </a>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -954,4 +1031,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
-
