@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z Living Garden Padalarang</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2696242160718498');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2696242160718498&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<meta name="description" content="Informasi lengkap tentang perumahan cluster Z Living Garden Padalarang. Lingkungan asri, akses mudah, dekat tol, dan cocok untuk hunian keluarga.">
+<meta name="keywords" content="perumahan padalarang, rumah bandung barat, cluster padalarang, z living garden, rumah dekat tol bandung">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* semua CSS asli kamu tetap dipertahankan */
+body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; margin:0; padding:0; background:#f8f9fa;}
+header {
+    height: 80vh;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)), url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header h1 { font-size: 3rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); margin-bottom:15px; }
+header p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); margin-bottom:20px; }
+header a.btn { font-weight: bold; transition: transform 0.3s; }
+header a.btn:hover { transform: scale(1.05); }
+
+.navbar { background: rgba(34,34,34,0.95); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.navbar .nav-link { color: #fff !important; font-weight: 500; }
+.navbar .navbar-brand { color: #ff6f61; font-weight: bold; }
+.navbar .nav-link:hover { color: #ff9a8b !important; }
+
+.card-img-top { height: 200px; object-fit: cover; border-radius:10px; }
+.section { padding: 60px 0; opacity:0; transform: translateY(20px); transition: all 0.8s; }
+.section.visible { opacity:1; transform: translateY(0); }
+
+.section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #222;
+    position: relative;
+    margin-bottom: 30px;
+}
+.section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6f61, #ff9a8b);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+footer { background: #333; color: white; padding: 30px 0; text-align:center; }
+iframe { border-radius: 10px; }
+.icon-distance, .icon-feature { width:30px; margin-right:8px; vertical-align:middle; }
+
+.card-title { font-weight: 700; }
+
+.form-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 720px;
+  margin: auto;
+}
+
+.form-container iframe {
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Floating WhatsApp PNG */
+.wa-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  animation: wiggle 2.2s infinite ease-in-out;
+}
+/* Icon PNG */
+.wa-float img.wa-icon {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+
+  /* Smooth transition */
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.4s ease;
+
+  /* Glow neon mengikuti bentuk icon (bukan kotak) */
+  filter: drop-shadow(0 0 6px #25d366cc);
+}
+/* Wiggle idle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(4deg); }
+  40% { transform: rotate(-4deg); }
+  60% { transform: rotate(3deg); }
+  80% { transform: rotate(-3deg); }
+}
+/* Hover smooth zoom + stronger neon glow */
+.wa-float img.wa-icon:hover {
+  transform: scale(1.32);
+  filter: drop-shadow(0 0 12px #22ff7ecc);
+}
+
+.faq-item { margin-bottom:15px; }
+.faq-item h6 { font-weight:700; }
+.faq-item p { margin:5px 0 0 0; }
+
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    header p { font-size: 1rem; }
+    .section { padding: 40px 15px; }
+    .section h2 { font-size: 1.6rem; margin-bottom: 20px; }
+    .card-img-top { height: 180px; }
+
+    .form-container { padding: 15px; }
+    .form-container iframe { height: 1100px; }
+
+    .fixed-cta a { padding: 12px 20px; font-size:14px; }
+}
+
+.card:hover { transform: translateY(-10px); transition: transform 0.5s ease; }
+
+.promo-highlight { animation: pulse 2s infinite; }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+html { scroll-behavior: smooth; }
+
+/* ================================
+   OVERLAY
+================================ */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Saat Lightbox aktif */
+.lightbox-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================================
+   IMAGE
+================================ */
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
+
+  /* default sebelum muncul */
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.35s ease,
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Saat overlay aktif → gambar muncul */
+.lightbox-overlay.visible #lightbox-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================================
+   NAVIGATION BUTTONS
+================================ */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 10px 18px;
+  user-select: none;
+  opacity: 0.7;
+  transition: 0.25s;
+  z-index: 20000; /* FORCE DI ATAS GAMBAR */
+  pointer-events: auto; /* penting */
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.25);
+}
+
+.lightbox-prev { left: 25px; }
+.lightbox-next { right: 25px; }
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 2.8rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.25s ease;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* ================================
+   ANIMATION – SLIDE TRANSITIONS
+================================ */
+
+/* Keluar ke kiri */
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-50px); }
+}
+
+/* Masuk dari kanan */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Keluar ke kanan */
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(50px); }
+}
+
+/* Masuk dari kiri */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Class animasi dipakai oleh JS */
+/* ANIMASI KELUAR KE KIRI */
+.slide-out-left {
+  animation: slideOutLeft 0.30s ease forwards;
+}
+
+/* ANIMASI MASUK DARI KANAN */
+.slide-in-right {
+  animation: slideInRight 0.30s ease forwards;
+}
+
+/* ANIMASI KELUAR KE KANAN */
+.slide-out-right {
+  animation: slideOutRight 0.30s ease forwards;
+}
+
+/* ANIMASI MASUK DARI KIRI */
+.slide-in-left {
+  animation: slideInLeft 0.30s ease forwards;
+}
+
+
+#promo-countdown { font-weight:bold; color:#d9534f; font-size:1.2rem; margin-top:10px; }
+.gallery-item {
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Z Living Garden</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Fitur</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tipe-rumah">Tipe Rumah</a></li>
+        <li class="nav-item"><a class="nav-link" href="#location">Lokasi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#promo">Promo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonial">Testimoni</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#form-lead">Booking</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header id="hero">
+  <h1>Rumah Impian di Z Living Garden Padalarang</h1>
+  <p>DP mulai 10%, promo akhir tahun. Booking survey sekarang!</p>
+  <a href="#form-lead" class="btn btn-danger btn-lg">Booking Survey</a>
+</header>
+
+<!-- Fitur Section -->
+<section class="section bg-light" id="features">
+  <div class="container">
+    <h2>Fitur & Keunggulan</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-4">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="taman.jpg" class="card-img-top" alt="Taman & Playground">
+          <div class="card-body">
+            <h5 class="card-title fw-bold" style="color:#ff6f61;">Taman & Playground</h5>
+            <p class="card-text" style="color:#555; font-style:italic;">
+              🌿 Lingkungan hijau dengan playground untuk anak-anak.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="keamanan.jpg" class="card-img-top" alt="Keamanan 24 Jam">
+          <div class="card-body">
+            <h5 class="card-title fw-bold" style="color:#ff6f61;">Keamanan 24 Jam</h5>
+            <p class="card-text" style="color:#555; font-style:italic;">
+              🔒 Keamanan terjaga dengan CCTV & petugas profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="akses-tol.jpg" class="card-img-top" alt="Dekat Akses Tol">
+          <div class="card-body">
+            <h5 class="card-title fw-bold" style="color:#ff6f61;">Dekat Akses Tol</h5>
+            <p class="card-text" style="color:#555; font-style:italic;">
+              🛣️ Hanya beberapa menit dari akses tol utama Bandung-Barat dan kota baru Parahyangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tipe Rumah Section -->
+<section class="section" id="tipe-rumah">
+  <div class="container">
+    <h2>Tipe Rumah</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Tipe Loft -->
+      <div class="col-12 col-md-3">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="loft.jpg" class="card-img-top" alt="Tipe Loft">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Tipe Loft</h5>
+            <p class="card-text">
+              🏠 62 m² bangunan<br>
+              🌱 60 m² tanah<br>
+              🚪 2 Kamar Tidur<br>
+              🛁 1 Kamar Mandi
+            </p>
+            <a href="loft.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tipe Deluxe -->
+      <div class="col-12 col-md-3">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="deluxe.jpg" class="card-img-top" alt="Tipe Deluxe">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Tipe Deluxe</h5>
+            <p class="card-text">
+              🏠 70 m² bangunan<br>
+              🌱 72 m² tanah<br>
+              🚪 3 Kamar Tidur<br>
+              🛁 2 Kamar Mandi
+            </p>
+            <a href="loft.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tipe Villa -->
+      <div class="col-12 col-md-3">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="villa.jpg" class="card-img-top" alt="Tipe Villa">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Tipe Villa</h5>
+            <p class="card-text">
+              🏠 90 m² bangunan<br>
+              🌱 100 m² tanah<br>
+              🚪 4 Kamar Tidur<br>
+              🛁 3 Kamar Mandi
+            </p>
+            <a href="vista.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tipe Vista -->
+      <div class="col-12 col-md-3">
+        <div class="card h-100 text-center shadow-sm border-0">
+          <img src="vista.jpg" class="card-img-top" alt="Tipe Vista">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Tipe Vista</h5>
+            <p class="card-text">
+              🏠 66 m² bangunan<br>
+              🌱 70 m² tanah<br>
+              🚪 3 Kamar Tidur<br>
+              🛁 2 Kamar Mandi
+            </p>
+            <a href="vista.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lokasi -->
+<section class="section" id="location">
+<div class="container">
+<h2>Lokasi Strategis</h2>
+<div class="row mb-4 justify-content-center">
+  <div class="col-12">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://maps.google.com/maps?q=Z%20Living%20Garden%20Padalarang&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<div class="row g-4 justify-content-center text-center">
+  <div class="col-6 col-md-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <img src="icon-train.png" alt="Stasiun" class="icon-distance">
+        <h5 class="card-title">Stasiun Padalarang</h5>
+        <p class="card-text">10 menit dari perumahan</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <img src="icon-city.png" alt="Pusat Kota" class="icon-distance">
+        <h5 class="card-title">Pusat Kota</h5>
+        <p class="card-text">15 menit dari perumahan</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Promo Section update -->
+<section class="section bg-light" id="promo">
+<div class="container">
+<h2>Promo & Penawaran</h2>
+<div class="text-center mb-2">
+  <span id="promo-countdown"></span>
+</div>
+<div class="row g-4 justify-content-center">
+  <div class="col-12 col-md-4">
+    <div class="card text-center shadow-sm border-danger h-100 promo-highlight">
+      <div class="card-body">
+        <img src="icon-dp.png" alt="DP 10%" class="mb-3" style="width:60px;">
+        <h5 class="card-title text-danger">DP Mulai 10%</h5>
+        <p class="card-text">Mulai memiliki rumah impian dengan down payment super ringan.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card text-center shadow-sm border-success h-100">
+      <div class="card-body">
+        <img src="icon-cicilan.png" alt="Cicilan Ringan" class="mb-3" style="width:60px;">
+        <h5 class="card-title text-success">Cicilan Ringan</h5>
+        <p class="card-text">Cicilan yang fleksibel dan sesuai kemampuan Anda.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card text-center shadow-sm border-warning h-100 promo-highlight">
+      <div class="card-body">
+        <img src="icon-promo.png" alt="Promo Akhir Tahun" class="mb-3" style="width:60px;">
+        <h5 class="card-title text-warning">Promo Akhir Tahun</h5>
+        <p class="card-text">Kesempatan terbatas! Berlaku sampai 31 Desember 2025.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONI: Video berdiri sendiri -->
+<section class="section" id="testimonial">
+  <div class="container">
+    <h2>Testimoni & Progress</h2>
+
+    <!-- Video testimoni (tetap tampil selalu) -->
+    <div class="mb-4 text-center">
+      <video controls width="100%" style="max-width:700px; border-radius:10px;">
+        <source src="testimoni.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video tag.
+      </video>
+    </div>
+
+    <!-- Swiper hanya untuk FOTO progress -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="progres1.jpg" class="img-fluid rounded gallery-item" alt="Progress 1"></div>
+        <div class="swiper-slide"><img src="progres2.jpg" class="img-fluid rounded gallery-item" alt="Progress 2"></div>
+        <div class="swiper-slide"><img src="progres3.jpg" class="img-fluid rounded gallery-item" alt="Progress 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX OVERLAY (biarkan seperti sebelumnya) -->
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
+  <img src="" alt="Lightbox Image" id="lightbox-img">
+  <span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
+</div>
+
+<!-- FAQ -->
+<section class="section bg-light" id="faq">
+<div class="container">
+<h2>FAQ</h2>
+<div class="accordion" id="faqAccordion">
+  
+  <!-- FAQ Items -->
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+        Fitur unggulan apa saja di Z Living Garden?
+      </button>
+    </h6>
+    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Fitur unggulan meliputi taman & playground untuk anak, keamanan 24 jam dengan CCTV & petugas profesional, akses mudah ke tol Padalarang, Stasiun Padalarang, dan kota baru Parahyangan. Semua dirancang untuk kenyamanan dan kemudahan mobilitas penghuni.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+        Apakah Z Living Garden menerapkan one gate system?
+      </button>
+    </h6>
+    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Ya, Z Living Garden mengusung sistem one gate untuk keamanan maksimal, hanya penghuni dan tamu terdaftar yang bisa mengakses area perumahan. Ini memastikan privasi dan keamanan keluarga Anda.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+        Apakah lokasi strategis?
+      </button>
+    </h6>
+    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Lokasi sangat strategis, dekat akses tol, stasiun kereta, dan kota baru Parahyangan. Lingkungan juga nyaman dengan udara bersih dan pemandangan hijau.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+        Apakah legalitas rumah sudah terjamin?
+      </button>
+    </h6>
+    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Legalitas sudah terjamin aman dengan sertifikat SHM dan PBG. Semua dokumen resmi dan transparan untuk memberikan rasa aman dan nyaman bagi pembeli.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+        Skema pembayaran apa saja tersedia?
+      </button>
+    </h6>
+    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Selain cash keras, tersedia juga cash bertahap, KPR, dan cicil DP 0% sesuai syarat & ketentuan. Skema fleksibel untuk menyesuaikan kebutuhan Anda.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+        Bagaimana kualitas air bersih?
+      </button>
+    </h6>
+    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Air bersih tersedia dan aman langsung untuk dimasak. Sistem distribusi air dirancang agar selalu terjaga kebersihannya.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+        Apakah kawasan bebas banjir dan longsor?
+      </button>
+    </h6>
+    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Ya, kawasan bebas banjir dan longsor. Perumahan dibangun di area aman dengan drainase dan kontur tanah yang baik.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading8">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+        Berapa biaya booking?
+      </button>
+    </h6>
+    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Booking hanya Rp3 juta saja, fleksibel menyesuaikan kebutuhan calon pembeli. Dana ini akan dikreditkan ke pembayaran DP saat transaksi.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading9">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+        Apakah pemandangan rumah bagus?
+      </button>
+    </h6>
+    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Ya, semua unit menyuguhkan pemandangan hijau, udara bersih, dan beberapa unit memiliki view langsung pegunungan Burangrang.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading10">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+        Kapan rumah bisa ditempati?
+      </button>
+    </h6>
+    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Semua rumah merupakan rumah indent. Estimasi serah terima diinformasikan secara transparan dan dijamin selesai sesuai kualitas terbaik.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading11">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+        Apakah lingkungan ramah anak?
+      </button>
+    </h6>
+    <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Ya, lingkungan dirancang ramah anak dengan playground, jalur pejalan kaki, dan area hijau aman.
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item faq-item">
+    <h6 class="accordion-header" id="faqHeading12">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+        Apakah akses transportasi mudah?
+      </button>
+    </h6>
+    <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Akses mudah ke tol, stasiun kereta, dan kota baru Parahyangan membuat mobilitas harian dan perjalanan luar kota lebih efisien.
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- Form Section -->
+<section class="section" id="form-lead">
+  <div class="container">
+    <h2 class="text-center mb-4">Booking Survey Sekarang</h2>
+    
+    <!-- Responsive Form Container -->
+    <div class="form-container">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScgRabZn4ohY8RmkgmfYAJHPzE3_dC6TdtZsYrLqnDunlNXXQ/viewform?embedded=true"
+        width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" style="border:none;">
+        Memuat…
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container text-center">
+<p>Marketing Z Living Garden Padalarang | WA: 08972590050 | Email: info@zlivinggarden.com</p>
+<p>Alamat lengkap: Jl. Raya Padalarang, Bandung Barat</p>
+</div>
+</footer>
+
+<a href="https://wa.me/628972590050?text=Halo%20saya%20ingin%20booking%20survey"
+   class="wa-float" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp" class="wa-icon">
+</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ===============================
+     SECTION ANIMATION (Intersection Observer)
+  ================================ */
+  const sections = document.querySelectorAll('.section');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(s => io.observe(s));
+
+
+  /* ===============================
+     PROMO HIGHLIGHT
+  ================================ */
+  const promoCards = document.querySelectorAll('#promo .card');
+  if (promoCards.length > 0) {
+    promoCards[0].classList.add('promo-highlight');
+  }
+
+
+  /* ===============================
+     PROMO COUNTDOWN
+  ================================ */
+  const countdownEl = document.getElementById("promo-countdown");
+  if (countdownEl) {
+    const target = new Date("Dec 31, 2025 23:59:59").getTime();
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const diff = target - now;
+
+      if (diff < 0) {
+        clearInterval(timer);
+        countdownEl.textContent = "Promo Berakhir";
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `Promo berakhir dalam ${d}d ${h}h ${m}m ${s}s`;
+    }, 1000);
+  }
+
+
+  /* ===============================
+     SWIPER SLIDER
+  ================================ */
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      slidesPerView: 1,
+      spaceBetween: 20,
+    });
+  }
+
+
+/* ===============================
+   LIGHTBOX GALLERY (Final Revisi)
+================================ */
+
+const images = Array.from(document.querySelectorAll('.gallery-item'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const prevBtn = document.getElementById('lightbox-prev');
+const nextBtn = document.getElementById('lightbox-next');
+const closeBtn = document.getElementById('lightbox-close');
+
+let idx = 0;
+
+/* === Buka Lightbox === */
+function openLightbox(i) {
+  idx = i;
+  lightbox.classList.add("visible");
+  document.body.style.overflow = "hidden";
+  setImageWithAnimation(); // tampil pertama tanpa animasi sliding
+}
+
+/* === Tutup Lightbox === */
+function closeLightbox() {
+  lightbox.classList.remove("visible");
+  document.body.style.overflow = "";
+}
+
+/* === Update gambar + animasi === */
+function setImageWithAnimation(direction = null) {
+
+  const newSrc = images[idx].src;
+
+  // Hentikan animasi lama
+  lightboxImg.classList.remove(
+    "slide-out-left", "slide-in-right",
+    "slide-out-right", "slide-in-left"
+  );
+
+  // Tanpa direction → buka modal pertama, tidak animasi slide
+  if (!direction) {
+    lightboxImg.src = newSrc;
+    return;
+  }
+
+  // Dengan direction → animasi slide
+  if (direction === "next") {
+
+    lightboxImg.classList.add("slide-out-left");
+
+    setTimeout(() => {
+      lightboxImg.src = newSrc;
+      lightboxImg.classList.remove("slide-out-left");
+      lightboxImg.classList.add("slide-in-right");
+    }, 250);
+
+  } else if (direction === "prev") {
+
+    lightboxImg.classList.add("slide-out-right");
+
+    setTimeout(() => {
+      lightboxImg.src = newSrc;
+      lightboxImg.classList.remove("slide-out-right");
+      lightboxImg.classList.add("slide-in-left");
+    }, 250);
+
+  }
+}
+
+/* =========================================
+   EVENT LISTENERS
+========================================= */
+
+if (images.length > 0) {
+
+  // Klik gambar → buka
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => openLightbox(i));
+  });
+
+  // Tombol Close (X)
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  // Klik area gelap → close
+  if (lightbox) {
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  // Tombol Prev
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      idx = (idx - 1 + images.length) % images.length;
+      setImageWithAnimation("prev");
+    });
+  }
+
+  // Tombol Next
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      idx = (idx + 1) % images.length;
+      setImageWithAnimation("next");
+    });
+  }
+
+  // Keyboard control
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight" && nextBtn) nextBtn.click();
+    if (e.key === "ArrowLeft" && prevBtn) prevBtn.click();
+  });
+
+  // Swipe gesture (mobile)
+  let startX = 0;
+  let endX = 0;
+
+  lightboxImg.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  lightboxImg.addEventListener("touchmove", e => {
+    endX = e.touches[0].clientX;
+  });
+
+  lightboxImg.addEventListener("touchend", () => {
+    const diff = endX - startX;
+    if (diff > 60 && prevBtn) prevBtn.click();
+    if (diff < -60 && nextBtn) nextBtn.click();
+  });
+}
+
+
+
+  /* ===============================
+     FB Pixel Tracking
+  ================================ */
+  document.querySelectorAll('a[href="#form-lead"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      try { fbq('track', 'Lead'); } catch (e) {}
+    });
+  });
+
+});
+</script>
+
+
+</body>
+</html>
