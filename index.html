@@ -331,7 +331,7 @@ html { scroll-behavior: smooth; }
         <li class="nav-item"><a class="nav-link" href="#promo">Promo</a></li>
         <li class="nav-item"><a class="nav-link" href="#testimonial">Testimoni</a></li>
         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#form-lead">Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="#leadForm">Booking</a></li>
       </ul>
     </div>
   </div>
@@ -734,20 +734,15 @@ html { scroll-behavior: smooth; }
 </div>
 </section>
 
-<!-- Form Section -->
-<section class="section" id="form-lead">
-  <div class="container">
-    <h2 class="text-center mb-4">Booking Survey Sekarang</h2>
-    
-    <!-- Responsive Form Container -->
-    <div class="form-container">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScgRabZn4ohY8RmkgmfYAJHPzE3_dC6TdtZsYrLqnDunlNXXQ/viewform?embedded=true"
-        width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" style="border:none;">
-        Memuat…
-      </iframe>
-    </div>
-  </div>
-</section>
+<form id="leadForm">
+  <input type="text" name="nama" placeholder="Nama lengkap" required>
+  <input type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
+  <button type="submit">Kirim</button>
+</form>
+
+<!-- Tempat menampilkan pesan setelah submit -->
+<div id="formMessage" style="margin-top:10px;color:green;"></div>
+
 
 <!-- Footer -->
 <footer>
@@ -783,7 +778,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.2 });
   sections.forEach(s => io.observe(s));
 
-
   /* ===============================
      PROMO HIGHLIGHT
   ================================ */
@@ -791,7 +785,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (promoCards.length > 0) {
     promoCards[0].classList.add('promo-highlight');
   }
-
 
   /* ===============================
      PROMO COUNTDOWN
@@ -818,7 +811,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1000);
   }
 
-
   /* ===============================
      SWIPER SLIDER
   ================================ */
@@ -832,150 +824,129 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ===============================
+     LIGHTBOX GALLERY
+  ================================ */
+  const images = Array.from(document.querySelectorAll('.gallery-item'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const closeBtn = document.getElementById('lightbox-close');
 
-/* ===============================
-   LIGHTBOX GALLERY (Final Revisi)
-================================ */
+  let idx = 0;
 
-const images = Array.from(document.querySelectorAll('.gallery-item'));
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const prevBtn = document.getElementById('lightbox-prev');
-const nextBtn = document.getElementById('lightbox-next');
-const closeBtn = document.getElementById('lightbox-close');
-
-let idx = 0;
-
-/* === Buka Lightbox === */
-function openLightbox(i) {
-  idx = i;
-  lightbox.classList.add("visible");
-  document.body.style.overflow = "hidden";
-  setImageWithAnimation(); // tampil pertama tanpa animasi sliding
-}
-
-/* === Tutup Lightbox === */
-function closeLightbox() {
-  lightbox.classList.remove("visible");
-  document.body.style.overflow = "";
-}
-
-/* === Update gambar + animasi === */
-function setImageWithAnimation(direction = null) {
-
-  const newSrc = images[idx].src;
-
-  // Hentikan animasi lama
-  lightboxImg.classList.remove(
-    "slide-out-left", "slide-in-right",
-    "slide-out-right", "slide-in-left"
-  );
-
-  // Tanpa direction → buka modal pertama, tidak animasi slide
-  if (!direction) {
-    lightboxImg.src = newSrc;
-    return;
+  function openLightbox(i) {
+    idx = i;
+    lightbox.classList.add("visible");
+    document.body.style.overflow = "hidden";
+    setImageWithAnimation();
   }
 
-  // Dengan direction → animasi slide
-  if (direction === "next") {
+  function closeLightbox() {
+    lightbox.classList.remove("visible");
+    document.body.style.overflow = "";
+  }
 
-    lightboxImg.classList.add("slide-out-left");
+  function setImageWithAnimation(direction = null) {
+    const newSrc = images[idx].src;
 
-    setTimeout(() => {
+    lightboxImg.classList.remove(
+      "slide-out-left", "slide-in-right",
+      "slide-out-right", "slide-in-left"
+    );
+
+    if (!direction) {
       lightboxImg.src = newSrc;
-      lightboxImg.classList.remove("slide-out-left");
-      lightboxImg.classList.add("slide-in-right");
-    }, 250);
+      return;
+    }
 
-  } else if (direction === "prev") {
-
-    lightboxImg.classList.add("slide-out-right");
-
-    setTimeout(() => {
-      lightboxImg.src = newSrc;
-      lightboxImg.classList.remove("slide-out-right");
-      lightboxImg.classList.add("slide-in-left");
-    }, 250);
-
-  }
-}
-
-/* =========================================
-   EVENT LISTENERS
-========================================= */
-
-if (images.length > 0) {
-
-  // Klik gambar → buka
-  images.forEach((img, i) => {
-    img.addEventListener("click", () => openLightbox(i));
-  });
-
-  // Tombol Close (X)
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeLightbox);
+    if (direction === "next") {
+      lightboxImg.classList.add("slide-out-left");
+      setTimeout(() => {
+        lightboxImg.src = newSrc;
+        lightboxImg.classList.remove("slide-out-left");
+        lightboxImg.classList.add("slide-in-right");
+      }, 250);
+    } else if (direction === "prev") {
+      lightboxImg.classList.add("slide-out-right");
+      setTimeout(() => {
+        lightboxImg.src = newSrc;
+        lightboxImg.classList.remove("slide-out-right");
+        lightboxImg.classList.add("slide-in-left");
+      }, 250);
+    }
   }
 
-  // Klik area gelap → close
-  if (lightbox) {
-    lightbox.addEventListener("click", e => {
-      if (e.target === lightbox) closeLightbox();
+  if (images.length > 0) {
+    images.forEach((img, i) => {
+      img.addEventListener("click", () => openLightbox(i));
     });
-  }
 
-  // Tombol Prev
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
+    if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener("click", e => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    if (prevBtn) prevBtn.addEventListener("click", () => {
       idx = (idx - 1 + images.length) % images.length;
       setImageWithAnimation("prev");
     });
-  }
-
-  // Tombol Next
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
+    if (nextBtn) nextBtn.addEventListener("click", () => {
       idx = (idx + 1) % images.length;
       setImageWithAnimation("next");
     });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight" && nextBtn) nextBtn.click();
+      if (e.key === "ArrowLeft" && prevBtn) prevBtn.click();
+    });
+
+    let startX = 0;
+    let endX = 0;
+    lightboxImg.addEventListener("touchstart", e => { startX = e.touches[0].clientX; });
+    lightboxImg.addEventListener("touchmove", e => { endX = e.touches[0].clientX; });
+    lightboxImg.addEventListener("touchend", () => {
+      const diff = endX - startX;
+      if (diff > 60 && prevBtn) prevBtn.click();
+      if (diff < -60 && nextBtn) nextBtn.click();
+    });
   }
 
-  // Keyboard control
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowRight" && nextBtn) nextBtn.click();
-    if (e.key === "ArrowLeft" && prevBtn) prevBtn.click();
-  });
-
-  // Swipe gesture (mobile)
-  let startX = 0;
-  let endX = 0;
-
-  lightboxImg.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  lightboxImg.addEventListener("touchmove", e => {
-    endX = e.touches[0].clientX;
-  });
-
-  lightboxImg.addEventListener("touchend", () => {
-    const diff = endX - startX;
-    if (diff > 60 && prevBtn) prevBtn.click();
-    if (diff < -60 && nextBtn) nextBtn.click();
-  });
-}
-
-
-
   /* ===============================
-     FB Pixel Tracking
+     FORM SUBMIT + META PIXEL LEAD
   ================================ */
-  document.querySelectorAll('a[href="#form-lead"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      try { fbq('track', 'Lead'); } catch (e) {}
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwEa5826ZepbrizmMe6DaYtscPwEs0_8VG87-WkN9_zet-O-7al9mUtOdQ-GnuXVmvJ/exec";
+  const leadForm = document.getElementById("leadForm");
+  const formMessage = document.getElementById("formMessage");
+
+  if (leadForm && formMessage) {
+    leadForm.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const formData = {
+        nama: this.nama.value,
+        whatsapp: this.whatsapp.value
+      };
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to submit');
+        try { fbq('track', 'Lead'); } catch(e){}
+        formMessage.innerText = "Terima kasih, data Anda sudah terkirim!";
+        this.reset();
+      })
+      .catch(err => {
+        console.error(err);
+        formMessage.innerText = "Terjadi kesalahan, coba lagi nanti.";
+      });
     });
-  });
+  }
 
 });
 </script>
@@ -983,4 +954,3 @@ if (images.length > 0) {
 
 </body>
 </html>
-
