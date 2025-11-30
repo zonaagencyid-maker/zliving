@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Z Living Garden Padalarang</title>
 <link rel="icon" href="logo.png" type="image/png">
-
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -31,6 +30,7 @@ src="https://www.facebook.com/tr?id=834612362650732&ev=PageView&noscript=1"
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
 /* semua CSS asli kamu tetap dipertahankan */
@@ -50,7 +50,16 @@ header p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); margin-b
 header a.btn { font-weight: bold; transition: transform 0.3s; }
 header a.btn:hover { transform: scale(1.05); }
 
-.navbar { background: rgba(34,34,34,0.95); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.navbar {
+    background: rgba(34,34,34,0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; 
+}
 .navbar .nav-link { color: #fff !important; font-weight: 500; }
 .navbar .navbar-brand { color: #ff6f61; font-weight: bold; }
 .navbar .nav-link:hover { color: #ff9a8b !important; }
@@ -378,6 +387,281 @@ html { scroll-behavior: smooth; }
   margin-top: 10px;
   color: green;
 }
+
+/* Tombol Scroll Ke Atas */
+.scroll-top {
+  position: fixed;
+  bottom: 100px; /* naik sedikit di atas icon WA */
+  right: 30px;   /* sejajar dengan icon WA */
+  width: 50px;
+  height: 50px;
+  background: #ff6f61;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Muncul ketika scroll */
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: scale(1.15);
+  background: #e85a50;
+}
+
+/* Saat mendekati footer */
+.float-avoid-footer {
+  transform: translateY(-70px);
+}
+
+/* Wrapper baru buat menghindari konflik transform */
+.wa-inner {
+  transition: transform 0.3s ease;
+}
+
+/* Naik ketika mendekati footer */
+.float-avoid-footer .wa-inner {
+  transform: translateY(-70px);
+}
+.scroll-top.float-avoid-footer {
+  transform: translateY(-70px);
+}
+
+@media (max-width: 480px) {
+  /* WA naik lebih tinggi di mobile */
+  .float-avoid-footer .wa-inner {
+    transform: translateY(-120px);
+  }
+
+  /* tombol scroll juga ikut naik */
+  .scroll-top.float-avoid-footer {
+    transform: translateY(-120px);
+  }
+}
+
+/* Footer global */
+footer {
+  background: #333;
+  padding: 25px 0;
+  text-align: center;
+}
+
+/* Teks footer */
+footer p {
+  color: #e8e8e8;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 6px 0;
+  letter-spacing: 0.3px;
+}
+
+/* Garis tipis pemisah untuk tampilan premium */
+footer .footer-divider {
+  width: 60%;
+  height: 1px;
+  background: #555;
+  margin: 12px auto;
+  border-radius: 2px;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  footer p {
+    padding: 0 22px;  /* beri napas kiri-kanan */
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  footer .footer-divider {
+    width: 75%;
+  }
+}
+
+/* DESKTOP: tombol naik lebih tinggi */
+@media (min-width: 481px) {
+  .float-avoid-footer .wa-inner {
+    transform: translateY(-110px);
+  }
+
+  .scroll-top.float-avoid-footer {
+    transform: translateY(-110px);
+  }
+}
+
+/* Center menu di mobile */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Mobile menu jadi overlay, tidak mendorong konten */
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(34,34,34,0.95) !important;
+    z-index: 9999;
+
+    opacity: 0;
+    transform: translateY(-40px);
+    pointer-events: none;
+
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* animasi masuk */
+  .navbar-collapse.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* animasi keluar */
+  .navbar-collapse.closing {
+    opacity: 0;
+    transform: translateY(-40px);
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: none !important;
+    display: block !important;
+    overflow: hidden;
+  }
+}
+
+/* Tombol toggler */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 6px;
+  z-index: 10000;
+}
+
+.toggler-icon {
+  width: 26px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggler-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Garis berubah jadi X saat menu aktif */
+.navbar-toggler.active .toggler-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler.active .toggler-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .toggler-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+#menu-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 9000; /* di bawah menu, di atas hero */
+}
+
+#menu-backdrop.active {
+  display: block;
+}
+
+.swiper {
+  width: 100%;
+  height: 200px; /* tinggi card */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: 5px 10px;
+}
 </style>
 </head>
 <body>
@@ -386,10 +670,15 @@ html { scroll-behavior: smooth; }
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">Z Living Garden</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<button class="navbar-toggler" type="button">
+  <div class="toggler-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</button>
+
+<div class="navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#features">Fitur</a></li>
@@ -403,7 +692,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </nav>
-
+<div id="menu-backdrop"></div>
 <!-- Hero -->
 <header id="hero">
   <h1>Rumah Impian di Z Living Garden Padalarang</h1>
@@ -459,68 +748,121 @@ html { scroll-behavior: smooth; }
     <h2>Tipe Rumah</h2>
     <div class="row g-4 justify-content-center">
       <!-- Tipe Loft -->
-      <div class="col-12 col-md-3">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <img src="loft.jpg" class="card-img-top" alt="Tipe Loft">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Tipe Loft</h5>
-            <p class="card-text">
-              🏠 40 m² bangunan<br>
-              🌱 60 m² tanah<br>
-              🚪 1 Kamar Tidur<br>
-              🛁 1 Kamar Mandi
-            </p>
-            <a href="loft.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
-          </div>
-        </div>
+<div class="col-12 col-md-3">
+  <div class="card h-100 text-center shadow-sm border-0">
+
+    <!-- Swiper Carousel -->
+    <div class="swiper loftSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="loft1.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="loft2.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="loft3.jpg" class="card-img-top"></div>
       </div>
-      <!-- Tipe Deluxe -->
-      <div class="col-12 col-md-3">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <img src="deluxe.jpg" class="card-img-top" alt="Tipe Deluxe">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Tipe Deluxe</h5>
-            <p class="card-text">
-              🏠 55 m² bangunan<br>
-              🌱 60 m² tanah<br>
-              🚪 2 Kamar Tidur<br>
-              🛁 2 Kamar Mandi
-            </p>
-            <a href="loft.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
-          </div>
-        </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title fw-bold">Tipe Loft</h5>
+      <p class="card-text">
+        🏠 40 m² bangunan<br>
+        🌱 60 m² tanah<br>
+        🚪 1 Kamar Tidur<br>
+        🛁 1 Kamar Mandi
+      </p>
+      <a href="loft.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-md-3">
+  <div class="card h-100 text-center shadow-sm border-0">
+
+    <!-- Swiper Carousel Deluxe -->
+    <div class="swiper deluxeSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="deluxe1.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="deluxe2.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="deluxe3.jpg" class="card-img-top"></div>
       </div>
-      <!-- Tipe Villa -->
-      <div class="col-12 col-md-3">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <img src="villa.jpg" class="card-img-top" alt="Tipe Villa">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Tipe Villa</h5>
-            <p class="card-text">
-              🏠 65 m² bangunan<br>
-              🌱 60 m² tanah<br>
-              🚪 2 Kamar Tidur<br>
-              🛁 2 Kamar Mandi
-            </p>
-            <a href="vista.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
-          </div>
-        </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title fw-bold">Tipe Deluxe</h5>
+      <p class="card-text">
+        🏠 55 m² bangunan<br>
+        🌱 60 m² tanah<br>
+        🚪 2 Kamar Tidur<br>
+        🛁 2 Kamar Mandi
+      </p>
+      <a href="deluxe.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+    </div>
+
+  </div>
+</div>
+<div class="col-12 col-md-3">
+  <div class="card h-100 text-center shadow-sm border-0">
+
+    <!-- Swiper Carousel Villa -->
+    <div class="swiper villaSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="villa1.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="villa2.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="villa3.jpg" class="card-img-top"></div>
       </div>
-      <!-- Tipe Vista -->
-      <div class="col-12 col-md-3">
-        <div class="card h-100 text-center shadow-sm border-0">
-          <img src="vista.jpg" class="card-img-top" alt="Tipe Vista">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Tipe Vista</h5>
-            <p class="card-text">
-              🏠 62 m² bangunan<br>
-              🌱 66 m² tanah<br>
-              🚪 3 Kamar Tidur<br>
-              🛁 2 Kamar Mandi
-            </p>
-            <a href="vista.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
-          </div>
-        </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title fw-bold">Tipe Villa</h5>
+      <p class="card-text">
+        🏠 65 m² bangunan<br>
+        🌱 60 m² tanah<br>
+        🚪 2 Kamar Tidur<br>
+        🛁 2 Kamar Mandi
+      </p>
+      <a href="villa.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+    </div>
+
+  </div>
+</div>
+<div class="col-12 col-md-3">
+  <div class="card h-100 text-center shadow-sm border-0">
+
+    <!-- Swiper Carousel Vista -->
+    <div class="swiper vistaSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="vista1.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="vista2.jpg" class="card-img-top"></div>
+        <div class="swiper-slide"><img src="vista3.jpg" class="card-img-top"></div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title fw-bold">Tipe Vista</h5>
+      <p class="card-text">
+        🏠 62 m² bangunan<br>
+        🌱 66 m² tanah<br>
+        🚪 3 Kamar Tidur<br>
+        🛁 2 Kamar Mandi
+      </p>
+      <a href="vista.pdf" class="btn btn-primary btn-sm" target="_blank">Download E-Brochure</a>
+    </div>
+
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -822,23 +1164,27 @@ html { scroll-behavior: smooth; }
 
 <!-- Footer → letakkan DI LUAR section! -->
 <footer>
-  <p style="text-align:center; margin:5px 0; color:white;">
-    Marketing Z Living Garden Padalarang | WA: 088809526191 | Email: zlivinggarden@gmail.com
-  </p>
-  <p style="text-align:center; margin:5px 0; color:white;">
-    Alamat lengkap: Jl. Raya Cijamil, Mekarsari, Kec. Ngamprah, Bandung Barat
-  </p>
+  <p>Marketing Z Living Garden Padalarang | WA: 08972590050 | Email: info@zlivinggarden.com</p>
+
+  <div class="footer-divider"></div>
+
+  <p>Alamat lengkap: Jl. Raya Padalarang, Bandung Barat</p>
 </footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/6288809526191?text=Halo%20saya%20ingin%20booking%20survey"
+<a href="https://wa.me/628972590050?text=Halo%20saya%20ingin%20booking%20survey"
    class="wa-float" target="_blank">
-    <img src="whatsapp.png" alt="WhatsApp" class="wa-icon">
+    <div class="wa-inner">
+        <img src="whatsapp.png" alt="WhatsApp" class="wa-icon">
+    </div>
 </a>
+
+<!-- Tombol Scroll ke Atas -->
+<div id="scrollTop" class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -1027,13 +1373,129 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+// Scroll to top button
+const scrollBtn = document.getElementById("scrollTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const waButton = document.querySelector(".wa-float");
+const scrollTopBtn = document.getElementById("scrollTop");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", () => {
+  if (!footer) return;
+
+  const rect = footer.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const isNearFooter = rect.top < windowHeight;
+
+  if (isNearFooter) {
+    waButton.classList.add("float-avoid-footer");
+    scrollTopBtn.classList.add("float-avoid-footer");
+  } else {
+    waButton.classList.remove("float-avoid-footer");
+    scrollTopBtn.classList.remove("float-avoid-footer");
+  }
+});
+
+const navbarCollapse = document.getElementById("navbarNav");
+const navbarToggler = document.querySelector(".navbar-toggler");
+const backdrop = document.getElementById("menu-backdrop");
+
+function closeMenu() {
+  navbarCollapse.classList.remove("active");
+  navbarCollapse.classList.add("closing");
+  navbarToggler.classList.remove("active");
+  backdrop.classList.remove("active");
+
+  setTimeout(() => {
+    navbarCollapse.classList.remove("closing");
+  }, 450); // sama dengan durasi animasi CSS
+}
+
+navbarToggler.addEventListener("click", () => {
+  const isOpen = navbarCollapse.classList.contains("active");
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    navbarCollapse.classList.add("active");
+    navbarToggler.classList.add("active");
+    backdrop.classList.add("active");
+  }
+});
+
+// Klik di luar (backdrop) → tutup menu
+backdrop.addEventListener("click", () => {
+  closeMenu();
+});
+
+new Swiper(".loftSwiper", {
+  slidesPerView: 1,
+  loop: true,
+  pagination: {
+    el: ".loftSwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".loftSwiper .swiper-button-next",
+    prevEl: ".loftSwiper .swiper-button-prev",
+  },
+});
+
+new Swiper(".deluxeSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  pagination: {
+    el: ".deluxeSwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".deluxeSwiper .swiper-button-next",
+    prevEl: ".deluxeSwiper .swiper-button-prev",
+  },
+});
+
+new Swiper(".villaSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  pagination: {
+    el: ".villaSwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".villaSwiper .swiper-button-next",
+    prevEl: ".villaSwiper .swiper-button-prev",
+  },
+});
+
+new Swiper(".vistaSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  pagination: {
+    el: ".vistaSwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".vistaSwiper .swiper-button-next",
+    prevEl: ".vistaSwiper .swiper-button-prev",
+  },
+});
 </script>
 
 
 </body>
 </html>
-
-
-
-
 
