@@ -459,15 +459,16 @@ html { scroll-behavior: smooth; }
   transform: translateY(-70px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 481px) {
   /* WA naik lebih tinggi di mobile */
-  .float-avoid-footer .wa-inner {
-    transform: translateY(-120px);
-  }
+.float-avoid-footer {
+  transform: translateY(-20px);
+}
 
   /* tombol scroll juga ikut naik */
-  .scroll-top.float-avoid-footer {
-    transform: translateY(-120px);
+  .scroll-top {
+    transform: translateY(20px);
+	  bottom: 119px;
   }
 }
 
