@@ -126,6 +126,7 @@ iframe { border-radius: 10px; }
 /* Icon PNG */
 .wa-float img.wa-icon {
   width: 60px;
+    animation: pulse 1.5s infinite ease-in-out;
   height: auto;
   cursor: pointer;
 
@@ -137,17 +138,36 @@ iframe { border-radius: 10px; }
   /* Glow neon mengikuti bentuk icon (bukan kotak) */
   filter: drop-shadow(0 0 6px #25d366cc);
 }
-/* Wiggle idle animation */
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  20% { transform: rotate(4deg); }
-  40% { transform: rotate(-4deg); }
-  60% { transform: rotate(3deg); }
-  80% { transform: rotate(-3deg); }
+/* Pulse idle animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* membesar 10% */
+  }
 }
+/* Wrapper untuk translateY saat mendekati footer */
+.wa-move {
+  transition: transform 0.3s ease; /* Smooth naik/turun */
+}
+
+/* Saat mendekati footer, WA naik */
+.float-avoid-footer .wa-move {
+  transform: translateY(-70px); /* Desktop default */
+}
+
+/* Versi mobile */
+@media (max-width: 480px) {
+  .float-avoid-footer .wa-move {
+    transform: translateY(-120px); /* Naik lebih tinggi di mobile */
+  }
+}
+
 /* Hover smooth zoom + stronger neon glow */
 .wa-float img.wa-icon:hover {
   transform: scale(1.32);
+    animation: pulse 1.5s infinite ease-in-out;
   filter: drop-shadow(0 0 12px #22ff7ecc);
 }
 
@@ -423,7 +443,7 @@ html { scroll-behavior: smooth; }
 
 /* Saat mendekati footer */
 .float-avoid-footer {
-  transform: translateY(-70px);
+  transform: translateY(0px);
 }
 
 /* Wrapper baru buat menghindari konflik transform */
@@ -1498,6 +1518,4 @@ new Swiper(".vistaSwiper", {
 
 </body>
 </html>
-
-
 
