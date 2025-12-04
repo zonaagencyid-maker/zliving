@@ -647,9 +647,15 @@ footer .footer-divider {
 
 .swiper {
   width: 100%;
-  height: 200px; /* tinggi card */
   border-radius: 10px;
   overflow: hidden;
+}
+
+.loftSwiper,
+.deluxeSwiper,
+.villaSwiper,
+.vistaSwiper {
+  height: 200px; /* bebas mau berapa */
 }
 
 .swiper-slide {
@@ -693,6 +699,21 @@ footer .footer-divider {
 .btn-sm {
   font-size: 12px;
   padding: 5px 10px;
+}
+
+.progressSwiper {
+  height: 500px; /* bikin lebih tinggi */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progressSwiper .swiper-slide img {
+  height: 500px;
+  object-fit: cover;
+}
+.progressSwiper,
+.mySwiper {
+  height: 500px; /* lebih tinggi dari card rumah */
 }
 </style>
 </head>
@@ -782,7 +803,6 @@ footer .footer-divider {
       <!-- Tipe Loft -->
 <div class="col-12 col-md-3">
   <div class="card h-100 text-center shadow-sm border-0">
-
     <!-- Swiper Carousel -->
     <div class="swiper loftSwiper">
       <div class="swiper-wrapper">
@@ -987,6 +1007,8 @@ footer .footer-divider {
     </div>
 
     <!-- Swiper hanya untuk FOTO progress -->
+	<div class="swiper progressSwiper">
+	<div class="progress-card">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="progres1.jpg" class="img-fluid rounded gallery-item" alt="Progress 1"></div>
@@ -1525,10 +1547,18 @@ new Swiper(".vistaSwiper", {
     prevEl: ".vistaSwiper .swiper-button-prev",
   },
 });
+
+new Swiper(".progressSwiper", {
+  loop: true,
+  pagination: { el: ".swiper-pagination", clickable: true },
+  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  slidesPerView: 1,
+});
 </script>
 
 
 </body>
 </html>
+
 
 
